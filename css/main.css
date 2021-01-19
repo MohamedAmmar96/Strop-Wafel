@@ -87,6 +87,7 @@
         
         .nav-li {
             margin-inline-end: 40px;
+            position: relative;
         }
         
         .nav-li:last-child {
@@ -104,6 +105,151 @@
         .nav-li .nav-link:hover {
             color: var(--main);
         }
+        /*** Sub Menu and Sub-Sub-Menu Start ***/
+        
+        .sub-menu {
+            position: absolute;
+            top: 35px;
+            right: 50%;
+            transform: translateX(50%);
+            min-width: 150px;
+            background-color: #fff;
+            box-shadow: 3px 3px 15px #00000012, -3px -3px 15px #00000012;
+            border-radius: 10px;
+            /* text-align: center; */
+            z-index: 99999;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .sub-menu::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            right: 50%;
+            transform: translate(50%);
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        
+        .sub-li {
+            padding: 7px 15px;
+            position: relative;
+        }
+        
+        .sub-li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translate(50%);
+            width: 80%;
+            height: 1px;
+            background-color: #ededed;
+        }
+        
+        .sub-li:last-child:after {
+            display: none;
+        }
+        
+        .sub-li .sub-link {
+            color: #878787;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: "regular";
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            white-space: nowrap;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .sub-sub-box .sub-link::after {
+            content: "\f104";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        html[dir=ltr] .sub-sub-box .sub-link::after {
+            content: "\f105";
+        }
+        
+        .sub-li .sub-link:hover {
+            color: var(--main);
+        }
+        
+        .sub-box:hover .sub-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .sub-sub-menu {
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            min-width: 150px;
+            background-color: #fff;
+            box-shadow: -3px -3px 15px #00000012;
+            border-radius: 10px;
+            /* text-align: center; */
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        html[dir=ltr] .sub-sub-menu {
+            right: auto;
+            left: 100%;
+            box-shadow: 3px 3px 15px #00000012;
+        }
+        
+        .sub-sub-li {
+            padding: 7px 15px;
+            position: relative;
+        }
+        
+        .sub-sub-li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translate(50%);
+            width: 80%;
+            height: 1px;
+            background-color: #ededed;
+        }
+        
+        .sub-sub-li:last-child:after {
+            display: none;
+        }
+        
+        .sub-sub-li .sub-sub-link {
+            color: #878787;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: "regular";
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            white-space: nowrap;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .sub-sub-li .sub-sub-link:hover {
+            color: var(--main);
+        }
+        
+        .sub-sub-box:hover .sub-sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        /*** Sub Menu and Sub-Sub-Menu Start ***/
         
         .terms {
             display: flex;
@@ -1531,7 +1677,9 @@
                 justify-content: space-between;
                 align-items: center;
                 font-size: 16px;
+                font-family: "bold";
             }
+            .config-box .nav-link::after,
             .sub-box .nav-link::after {
                 content: "\f107";
                 font-family: "Font Awesome 5 Free";
@@ -1566,9 +1714,88 @@
             }
             .mo-nav .config-link {
                 color: #515151;
-                font-size: 14px;
-                font-family: "regular";
+                font-size: 15px;
+                font-family: "medium";
             }
+            /*** Sub Menu and Sub Sub Menu Start ***/
+            .sub-menu {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                min-width: auto;
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                /* text-align: center; */
+                z-index: auto;
+                visibility: visible;
+                opacity: 1;
+                transition: none;
+                margin-inline-start: 10px;
+                display: none;
+            }
+            .sub-menu::before {
+                display: none;
+            }
+            .sub-li {
+                padding: 3px 0;
+                position: relative;
+            }
+            .sub-li::after {
+                display: none;
+            }
+            .sub-li .sub-link {
+                color: #515151;
+                font-size: 15px;
+                font-family: "medium";
+                white-space: pre-wrap;
+            }
+            .sub-sub-box .sub-link::after {
+                content: "\f107";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 600;
+                font-size: 14px;
+            }
+            html[dir=ltr] .sub-sub-box .sub-link::after {
+                content: "\f107";
+            }
+            .sub-sub-menu {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                min-width: auto;
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                /* text-align: center; */
+                z-index: auto;
+                visibility: visible;
+                opacity: 1;
+                transition: none;
+                margin-inline-start: 10px;
+                display: none;
+            }
+            html[dir=ltr] .sub-sub-menu {
+                left: auto;
+                box-shadow: none;
+            }
+            .sub-sub-li {
+                padding: 3px 0;
+                position: relative;
+            }
+            .sub-sub-li::after {
+                display: none;
+            }
+            .sub-sub-li .sub-sub-link {
+                color: #515151;
+                white-space: pre-wrap;
+            }
+            .sub-sub-li .sub-sub-link::before {
+                content: "- ";
+            }
+            /*** Sub Menu and Sub Sub Menu End ***/
             .menu-open {
                 right: 0;
             }

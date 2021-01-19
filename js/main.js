@@ -159,11 +159,18 @@ $(document).ready(function() {
             $(".lang-list").slideToggle(300);
         });
     }
-    $(".sub-box .nav-link").click(function() {
+    $(".config-box .nav-link").click(function() {
         $(this).toggleClass("rotate")
         $(this).siblings(".config-list").slideToggle(300);
     });
-
+    $(".sub-box .nav-link").click(function() {
+        $(this).toggleClass("rotate")
+        $(this).siblings(".sub-menu").slideToggle(300);
+    });
+    $(".sub-sub-box .sub-link").click(function() {
+        $(this).toggleClass("rotate")
+        $(this).siblings(".sub-sub-menu").slideToggle(300);
+    });
 
     $(".toabout").click(function() {
         $('html, body').animate({
