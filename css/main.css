@@ -396,6 +396,11 @@
         
         .flag {
             margin-inline-end: 10px;
+            width: 25%;
+        }
+        
+        .lang-img {
+            width: 100%;
         }
         
         .lang-name {
