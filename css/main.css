@@ -1764,7 +1764,7 @@
             }
         }
         
-        @media (min-width:601px) {
+        @media (min-width:601px) and (max-width:991px) {
             .about-img-box {
                 width: 60%;
                 margin: 0 auto;
