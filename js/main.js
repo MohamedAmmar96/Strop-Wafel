@@ -67,17 +67,6 @@ $(document).ready(function() {
         }
     });
 
-    $(".quan-down").on('click', function() {
-        var value = $(this).siblings(".quan-input").val();
-        value--;
-        $(this).siblings(".quan-input").val(value);
-    })
-    $(".quan-up").on('click', function() {
-        var value = $(this).siblings(".quan-input").val();
-        value++;
-        $(this).siblings(".quan-input").val(value);
-    })
-
     $('.offers .owl-carousel').owlCarousel({
         loop: true,
         autoplay: true,
@@ -182,4 +171,16 @@ $(document).ready(function() {
             scrollTop: $("#offers").offset().top
         }, 500);
     });
+
+    $(".quan-down").on('click', function() {
+        var value = $(this).siblings(".quan-input").val();
+        value--;
+        $(this).siblings(".quan-input").val(value);
+    })
+    $(".quan-up").on('click', function() {
+        var value = $(this).siblings(".quan-input").val();
+        value++;
+        $(this).siblings(".quan-input").val(value);
+    })
+
 });
