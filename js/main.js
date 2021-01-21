@@ -172,9 +172,12 @@ $(document).ready(function() {
         }, 500);
     });
 
+    var minVal = parseInt($(".quan-input").attr("min-val"));
     $(".quan-down").on('click', function() {
         var value = $(this).siblings(".quan-input").val();
-        value--;
+        if (value > minVal) {
+            value--;
+        }
         $(this).siblings(".quan-input").val(value);
     })
     $(".quan-up").on('click', function() {
